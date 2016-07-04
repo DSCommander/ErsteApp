@@ -14,11 +14,15 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import org.w3c.dom.Text;
 
@@ -35,6 +39,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ab.setLogo(R.drawable.ic_launcher);
+        ab.setDisplayUseLogoEnabled(true);
+        ab.setDisplayShowHomeEnabled(true);
         //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 
         // Intent zehn = new Intent(MainActivity.this, ZehnActivity.class);
@@ -51,6 +59,45 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         buttonzehn.setOnClickListener(this);
         buttonhundert.setOnClickListener(this);
         buttonhighscore.setOnClickListener(this);
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu){
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main_activity_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+
+        switch (item.getItemId()){
+            case R.id.info_id:
+                Toast.makeText(getApplicationContext(),"Info Icon ist ausgewählt", Toast.LENGTH_SHORT).show();
+                break;
+
+            case R.id.zehn_id:
+                Toast.makeText(getApplicationContext(),"Spiel Zehn ist ausgewählt", Toast.LENGTH_SHORT).show();
+                Intent zehn = new Intent(MainActivity.this, ZehnActivity.class);
+                startActivity(zehn);
+                break;
+
+            case R.id.hunder_id:
+                Toast.makeText(getApplicationContext(),"Spiel Hundert ist ausgewählt", Toast.LENGTH_SHORT).show();
+                Intent hundert = new Intent(MainActivity.this, HundertActivity.class);
+                startActivity(hundert);
+                break;
+
+            case R.id.highscore_id:
+                Toast.makeText(getApplicationContext(),"Highscore  ist ausgewählt", Toast.LENGTH_SHORT).show();
+                Intent highscore = new Intent(MainActivity.this, ShowHighScoreActivity.class);
+                startActivity(highscore);
+                break;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+        return super.onOptionsItemSelected(item);
     }
 
 
@@ -72,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent highscore = new Intent(MainActivity.this, ShowHighScoreActivity.class);
             startActivity(highscore);
         }
+        finish();
     }
 }
 

@@ -22,15 +22,15 @@
         <activity
             android:name=".ShowHighScoreActivity"
             android:label="@string/title_activity_show_high_score"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ZehnActivity"
             android:label="ZehnActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".HundertActivity"
             android:label="HundertActivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>
