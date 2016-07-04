@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ErsteApp</string>
+    <string name="title_activity_get_highscore">GetHighscoreActivity</string>
+    <string name="title_activity_show_high_score">ShowHighScoreActivity</string>
 </resources>

@@ -15,6 +15,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".GetHighscoreActivity"
+            android:label="@string/title_activity_get_highscore"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ShowHighScoreActivity"
+            android:label="@string/title_activity_show_high_score"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".ZehnActivity"
+            android:label="ZehnActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:name=".HundertActivity"
+            android:label="HundertActivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
