@@ -65,9 +65,13 @@ public class GetHighscoreActivity extends AppCompatActivity implements View.OnCl
 
            //pointsView.setText(String.valueOf(points));
 
-            editor.putString("myname",name);
+            //editor.putString("myname",name);
             //editor.putInt("punkte", 0);
-            editor.putInt("HIGHSCORE", points);
+            //editor.putInt("HIGHSCORE", points);
+
+            //Mein Vorschlag - Seeger
+            editor.putInt(name, points);
+
             editor.apply();
 
             editor.commit();

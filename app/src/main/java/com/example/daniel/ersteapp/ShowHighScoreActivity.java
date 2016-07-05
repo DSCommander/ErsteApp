@@ -12,6 +12,8 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.Map;
+
 public class ShowHighScoreActivity extends AppCompatActivity {
 
 
@@ -24,17 +26,28 @@ public class ShowHighScoreActivity extends AppCompatActivity {
         setContentView(R.layout.activity_show_high_score);
 
         //Restore preferences
+        //SharedPreferences sharedPreferences = getSharedPreferences("NAME", MODE_PRIVATE);
+        //String name = sharedPreferences.getString("myname", "no name found");
+
+        //if (sharedPreferences.getInt("HIGHSCORE", 0) >= points){
+        //    points = sharedPreferences.getInt("HIGHSCORE", 0);
+        //}
+
+        //textViewName.setText(name);
+        //textViewPoints.setText(String.valueOf(points));
+
+        //Mein Vorschlag - Seeger
         SharedPreferences sharedPreferences = getSharedPreferences("NAME", MODE_PRIVATE);
-        String name = sharedPreferences.getString("myname", "no name found");
-
-
-        if (sharedPreferences.getInt("HIGHSCORE", 0) >= points){
-
-            points = sharedPreferences.getInt("HIGHSCORE", 0);
-        }
-
         TextView textViewName = (TextView) findViewById(R.id.textView_Name);
         TextView textViewPoints = (TextView) findViewById(R.id.textView_Points);
+
+        String name = "";
+        String points = "";
+        Map<String, ?> allEntries = sharedPreferences.getAll();
+        for (Map.Entry<String, ?> entry : allEntries.entrySet()) {
+            name += entry.getKey() + "\n";
+            points += entry.getValue().toString()  + "\n";;
+        }
 
         textViewName.setText(name);
         textViewPoints.setText(String.valueOf(points));
