@@ -3,4 +3,6 @@
     <string name="title_activity_get_highscore">GetHighscoreActivity</string>
     <string name="title_activity_show_high_score">ShowHighScoreActivity</string>
     <string name="title_activity_main_ativity_menu">MainAtivityMenu</string>
+    <string name="title_activity_show_high_score_list">ShowHighScoreList</string>
+    <string name="title_activity_show_highscore_list">ShowHighscoreListActivity</string>
 </resources>

@@ -5,10 +5,17 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -39,6 +46,7 @@ public class HundertActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),GetHighscoreActivity.class));
             TimerView.setText("Zeit abglaufen!");
             uebergabe();
+            finish();
         }
     };
 
@@ -46,6 +54,7 @@ public class HundertActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hundert);
+        // TODO hinzufügen der ActionBar mit neuem eigenem Menü und eigenem Symbol und Symbol in der OnCreateOptionMenu
         points = 0;
         pickNumbersHundert();
     }
@@ -60,7 +69,6 @@ public class HundertActivity extends AppCompatActivity {
         in.putExtras(korb);
         startActivity(in);
     }
-
 
     private void pickNumbersHundert() {
 
@@ -100,6 +108,7 @@ public class HundertActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),GetHighscoreActivity.class));
             uebergabe();
             points = 0;
+            finish();
         }
         pickNumbersHundert();
     }
@@ -122,6 +131,7 @@ public class HundertActivity extends AppCompatActivity {
             startActivity(new Intent(getApplicationContext(),GetHighscoreActivity.class));
             uebergabe();
             points = 0;
+            finish();
         }
         pickNumbersHundert();
     }
@@ -133,8 +143,8 @@ public class HundertActivity extends AppCompatActivity {
         TextView pointsView = (TextView) findViewById(R.id.points_view);
         pointsView.setText("Punkte: " + points);
 
-
     }
+
 
 }
 

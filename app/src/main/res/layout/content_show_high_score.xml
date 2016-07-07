@@ -15,10 +15,19 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Highscore Liste"
+        android:id="@+id/textView5"
+        android:textSize="40dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=""
         android:id="@+id/textView_Name"
-        android:textSize="40dp"
+        android:textSize="20dp"
         android:layout_below="@+id/textView5"
         android:layout_alignLeft="@+id/textView5"
         android:layout_alignStart="@+id/textView5"
@@ -30,22 +39,23 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:id="@+id/textView_Points"
         android:text=""
-        android:textSize="40dp"
+        android:textSize="20dp"
         android:layout_alignTop="@+id/textView_Name"
         android:layout_alignRight="@+id/textView5"
         android:layout_alignEnd="@+id/textView5"
         android:layout_marginRight="51dp"
         android:layout_marginEnd="51dp" />
 
-    <TextView
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Highscore Liste"
-        android:id="@+id/textView5"
-        android:textSize="40dp"
+        android:text="Zum Hauptmenü"
+        android:id="@+id/button_zurueck"
+        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        />
-
+        android:theme="@style/MyButton"
+        android:layout_marginBottom="73dp"
+        android:layout_gravity="center" />
 
 
 </RelativeLayout>

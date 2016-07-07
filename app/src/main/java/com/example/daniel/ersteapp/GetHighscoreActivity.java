@@ -15,20 +15,16 @@ import android.widget.TextView;
 public class GetHighscoreActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String PREFS_NAME = "MyPrefsFile";
-    //private class MainActivity{};
     EditText inputName;
-    TextView inputPoints;
     int points = 0;
-    int zah = 0;
-    int test = 55;
+
 
 
     @Override
     protected void onCreate(Bundle State) {
         super.onCreate(State);
         setContentView(R.layout.activity_get_highscore);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        // TODO hinzufügen der ActionBar
 
         Bundle zielkorb = getIntent().getExtras();
         points = zielkorb.getInt("datenpaket1");
@@ -46,8 +42,6 @@ public class GetHighscoreActivity extends AppCompatActivity implements View.OnCl
 
         saveButton.setOnClickListener(this);
         viewButton.setOnClickListener(this);
-
-
     }
 
 
@@ -57,7 +51,7 @@ public class GetHighscoreActivity extends AppCompatActivity implements View.OnCl
            //final TextView pointsView = (TextView) findViewById(R.id.points_view);
 
             String name = inputName.getText().toString();
-            SharedPreferences prefname = getSharedPreferences("NAME", 0);
+            SharedPreferences prefname = getSharedPreferences("Zehn", 0);
             SharedPreferences.Editor editor = prefname.edit();
 
             //SharedPreferences prefpoints = getSharedPreferences("GAME", 0);
@@ -76,14 +70,10 @@ public class GetHighscoreActivity extends AppCompatActivity implements View.OnCl
 
             editor.commit();
 
-
-            
-
-
         }else{
 
             startActivity(new Intent(getApplicationContext(),ShowHighScoreActivity.class));
-
+            finish();
         }
     }
 

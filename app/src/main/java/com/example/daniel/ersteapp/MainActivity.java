@@ -1,40 +1,28 @@
 package com.example.daniel.ersteapp;
 
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
-import android.app.Activity;
-import android.content.Context;
-import android.content.DialogInterface;
+
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Build;
-import android.os.CountDownTimer;
-import android.preference.PreferenceManager;
-import android.support.annotation.Nullable;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.TimePicker;
 import android.widget.Toast;
-
-import org.w3c.dom.Text;
-
-import java.util.Random;
-import java.util.StringTokenizer;
-import java.util.concurrent.TimeUnit;
+import android.support.v7.app.ActionBar;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener  {
 
     private Button buttonzehn;
     private Button buttonhundert;
     private Button buttonhighscore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,14 +31,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         ab.setLogo(R.drawable.ic_launcher);
         ab.setDisplayUseLogoEnabled(true);
         ab.setDisplayShowHomeEnabled(true);
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+       /* Toolbar myMainActivity = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionBar(myMainActivity);
+        ActionBar ab = getSupportActionBar();
 
-        // Intent zehn = new Intent(MainActivity.this, ZehnActivity.class);
-
-        // Intent hundert = new Intent(MainActivity.this, HundertActivity.class);
-
-        // Intent highscore = new Intent(MainActivity.this, ShowHighScoreActivity.class);
-
+        ab.setDisplayShowHomeEnabled(true);*/
 
         buttonzehn = (Button) findViewById(R.id.button_zehn);
         buttonhundert = (Button) findViewById(R.id.button_hundert);
@@ -58,13 +43,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         buttonzehn.setOnClickListener(this);
         buttonhundert.setOnClickListener(this);
-        buttonhighscore.setOnClickListener(this);
+       buttonhighscore.setOnClickListener(this);
+
+       /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });*/
     }
 
 
+    // Anfang der Action Bar oben recht
     @Override
     public boolean onCreateOptionsMenu (Menu menu){
         MenuInflater menuInflater = getMenuInflater();
+        // TODO eigenes main_activity_menu erstellen anstatt menu highscore, damit es den Stern nicht Doppelt gibt evtl. zurück ins Menü Symbol
         menuInflater.inflate(R.menu.main_activity_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
@@ -73,32 +69,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item){
 
         switch (item.getItemId()){
+            case R.id.menu_id:
+                Toast.makeText(getApplicationContext(),"Menü ist ausgewählt", Toast.LENGTH_SHORT).show();
+                Intent menu = new Intent(MainActivity.this, MainActivity.class);
+                startActivity(menu);
+                return true;
+
+            case R.id.setting_id:
+                Toast.makeText(getApplicationContext(),"Setting ist ausgewählt", Toast.LENGTH_SHORT).show();
+                return true;
             case R.id.info_id:
-                Toast.makeText(getApplicationContext(),"Info Icon ist ausgewählt", Toast.LENGTH_SHORT).show();
-                break;
+                Toast.makeText(getApplicationContext(),"Info ist ausgewählt", Toast.LENGTH_SHORT).show();
+                return true;
 
             case R.id.zehn_id:
                 Toast.makeText(getApplicationContext(),"Spiel Zehn ist ausgewählt", Toast.LENGTH_SHORT).show();
                 Intent zehn = new Intent(MainActivity.this, ZehnActivity.class);
                 startActivity(zehn);
-                break;
+                return true;
 
             case R.id.hunder_id:
                 Toast.makeText(getApplicationContext(),"Spiel Hundert ist ausgewählt", Toast.LENGTH_SHORT).show();
                 Intent hundert = new Intent(MainActivity.this, HundertActivity.class);
                 startActivity(hundert);
-                break;
+                return true;
 
-            case R.id.highscore_id:
-                Toast.makeText(getApplicationContext(),"Highscore  ist ausgewählt", Toast.LENGTH_SHORT).show();
+            case R.id.zehn_highscore_id:
+                Toast.makeText(getApplicationContext(),"Zehner Highscore ist ausgewählt", Toast.LENGTH_SHORT).show();
                 Intent highscore = new Intent(MainActivity.this, ShowHighScoreActivity.class);
                 startActivity(highscore);
-                break;
+                return true;
+
+            case R.id.hundert_highscore_id:
+                Toast.makeText(getApplicationContext(),"Hunderter Highscore ist ausgewählt", Toast.LENGTH_SHORT).show();
+                //Intent highscore = new Intent(MainActivity.this, ShowHighScoreActivity.class);
+                //startActivity(highscore);
+                return true;
+
             default:
                 return super.onOptionsItemSelected(item);
         }
-        return super.onOptionsItemSelected(item);
+
     }
+    // Ende der Action Bar oben rechts
+
 
 
 
@@ -121,5 +135,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         finish();
     }
+
 }
 
