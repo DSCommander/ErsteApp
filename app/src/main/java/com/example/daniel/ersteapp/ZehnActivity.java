@@ -60,7 +60,7 @@ public class ZehnActivity extends AppCompatActivity {
 
         //String text = "Test";
         Bundle korb = new Bundle();
-        korb.putInt("datenpaket1", points);
+        korb.putInt("zehn_datenpaket", points);
         Intent in = new Intent(ZehnActivity.this, GetHighscoreActivity.class);
         in.putExtras(korb);
         startActivity(in);

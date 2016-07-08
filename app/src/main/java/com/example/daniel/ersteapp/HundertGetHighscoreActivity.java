@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class GetHighscoreActivity extends AppCompatActivity implements View.OnClickListener {
+public class HundertGetHighscoreActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String PREFS_NAME = "MyPrefsFile";
     EditText inputName;
@@ -27,7 +27,7 @@ public class GetHighscoreActivity extends AppCompatActivity implements View.OnCl
         // TODO hinzufügen der ActionBar
 
         Bundle zielkorb = getIntent().getExtras();
-        points = zielkorb.getInt("zehn_datenpaket");
+        points = zielkorb.getInt("hundert_datenpaket");
 
         TextView pointsView = (TextView) findViewById(R.id.points_view);
         pointsView.setText("Punkte: " + points);
@@ -45,19 +45,19 @@ public class GetHighscoreActivity extends AppCompatActivity implements View.OnCl
     }
 
 
-     @Override
+    @Override
     public void onClick(View view) {
         if(view.getId()==R.id.button_save){
-           //final TextView pointsView = (TextView) findViewById(R.id.points_view);
+            //final TextView pointsView = (TextView) findViewById(R.id.points_view);
 
             String name = inputName.getText().toString();
-            SharedPreferences prefname = getSharedPreferences("Zehn", 0);
+            SharedPreferences prefname = getSharedPreferences("Hundert", 0);
             SharedPreferences.Editor editor = prefname.edit();
 
             //SharedPreferences prefpoints = getSharedPreferences("GAME", 0);
             //SharedPreferences.Editor editor = prefpoints.edit();
 
-           //pointsView.setText(String.valueOf(points));
+            //pointsView.setText(String.valueOf(points));
 
             //editor.putString("myname",name);
             //editor.putInt("punkte", 0);
@@ -72,10 +72,11 @@ public class GetHighscoreActivity extends AppCompatActivity implements View.OnCl
 
         }else{
 
-            startActivity(new Intent(getApplicationContext(),ShowHighScoreActivity.class));
+            startActivity(new Intent(getApplicationContext(),HundertShowHighscoreActivity.class));
             finish();
         }
     }
 
 }
+
 

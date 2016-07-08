@@ -102,8 +102,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
             case R.id.hundert_highscore_id:
                 Toast.makeText(getApplicationContext(),"Hunderter Highscore ist ausgewählt", Toast.LENGTH_SHORT).show();
-                //Intent highscore = new Intent(MainActivity.this, ShowHighScoreActivity.class);
-                //startActivity(highscore);
+                Intent hundert_highscore = new Intent(MainActivity.this, HundertShowHighscoreActivity.class);
+                startActivity(hundert_highscore);
                 return true;
 
             default:

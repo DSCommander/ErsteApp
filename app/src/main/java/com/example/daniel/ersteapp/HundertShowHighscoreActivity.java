@@ -20,8 +20,7 @@ import android.widget.Toast;
 
 import java.util.Map;
 
-public class ShowHighScoreActivity extends AppCompatActivity {
-
+public class HundertShowHighscoreActivity extends AppCompatActivity {
 
     String[] arrayName;
     int[] arrayValue;
@@ -36,9 +35,8 @@ public class ShowHighScoreActivity extends AppCompatActivity {
         ab.setLogo(R.drawable.ic_star_black_24dp);
         ab.setDisplayUseLogoEnabled(true);
         ab.setDisplayShowHomeEnabled(true);
-        Eintrag();
 
-        //Mein Vorschlag - Seeger
+        Eintrag();
     }
 
 
@@ -56,7 +54,7 @@ public class ShowHighScoreActivity extends AppCompatActivity {
         switch (item.getItemId()){
             case R.id.menu_id:
                 Toast.makeText(getApplicationContext(),"Menü ist ausgewählt", Toast.LENGTH_SHORT).show();
-                Intent menu = new Intent(ShowHighScoreActivity.this, MainActivity.class);
+                Intent menu = new Intent(HundertShowHighscoreActivity.this, MainActivity.class);
                 startActivity(menu);
                 return true;
 
@@ -69,26 +67,26 @@ public class ShowHighScoreActivity extends AppCompatActivity {
 
             case R.id.zehn_id:
                 Toast.makeText(getApplicationContext(),"Spiel Zehn ist ausgewählt", Toast.LENGTH_SHORT).show();
-                Intent zehn = new Intent(ShowHighScoreActivity.this, ZehnActivity.class);
+                Intent zehn = new Intent(HundertShowHighscoreActivity.this, ZehnActivity.class);
                 startActivity(zehn);
                 return true;
 
             case R.id.hunder_id:
                 Toast.makeText(getApplicationContext(),"Spiel Hundert ist ausgewählt", Toast.LENGTH_SHORT).show();
-                Intent hundert = new Intent(ShowHighScoreActivity.this, HundertActivity.class);
+                Intent hundert = new Intent(HundertShowHighscoreActivity.this, HundertActivity.class);
                 startActivity(hundert);
                 return true;
 
             case R.id.zehn_highscore_id:
                 Toast.makeText(getApplicationContext(),"Highscore ist ausgewählt", Toast.LENGTH_SHORT).show();
-                Intent highscore = new Intent(ShowHighScoreActivity.this, ShowHighScoreActivity.class);
+                Intent highscore = new Intent(HundertShowHighscoreActivity.this, ShowHighScoreActivity.class);
                 startActivity(highscore);
                 return true;
 
             case R.id.hundert_highscore_id:
                 Toast.makeText(getApplicationContext(),"Highscore ist ausgewählt", Toast.LENGTH_SHORT).show();
-                Intent hundert_highscore = new Intent(ShowHighScoreActivity.this, HundertShowHighscoreActivity.class);
-                startActivity(hundert_highscore);
+                // Intent highscore = new Intent(HundertShowHighscoreActivity.this, HundertShowHighscoreActivity.class);
+                // startActivity(highscore);
                 return true;
 
             default:
@@ -142,7 +140,7 @@ public class ShowHighScoreActivity extends AppCompatActivity {
 
 
     public void Eintrag() {
-        SharedPreferences sharedPreferences = getSharedPreferences("Zehn", MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("Hundert", MODE_PRIVATE);
         TextView textViewName = (TextView) findViewById(R.id.textView_Name);
         TextView textViewPoints = (TextView) findViewById(R.id.textView_Points);
 
@@ -167,4 +165,5 @@ public class ShowHighScoreActivity extends AppCompatActivity {
 
 
 }
+
 

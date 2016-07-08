@@ -64,8 +64,8 @@ public class HundertActivity extends AppCompatActivity {
 
         //String text = "Test";
         Bundle korb = new Bundle();
-        korb.putInt("datenpaket1", points);
-        Intent in = new Intent(HundertActivity.this, GetHighscoreActivity.class);
+        korb.putInt("hundert_datenpaket", points);
+        Intent in = new Intent(HundertActivity.this, HundertGetHighscoreActivity.class);
         in.putExtras(korb);
         startActivity(in);
     }
