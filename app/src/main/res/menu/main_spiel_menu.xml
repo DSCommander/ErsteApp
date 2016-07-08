@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/menu_id"
+        android:title="Menü"
+        android:icon="@drawable/ic_reorder_black_24dp"
+        app:showAsAction="always"
+        />
+
+    <item
         android:id="@+id/spiele_id"
         android:title="Spiele"
         android:icon="@drawable/videogamet_black_24dp"
@@ -15,7 +22,7 @@
                 app:showAsAction="ifRoom"
                 />
             <item
-                android:id="@+id/hunder_id"
+                android:id="@+id/hundert_id"
                 android:title="Spiel Hundert"
                 android:icon="@drawable/ic_reorder_black_24dp"
                 app:showAsAction="ifRoom"

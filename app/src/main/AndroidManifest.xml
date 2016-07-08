@@ -17,26 +17,35 @@
         </activity>
         <activity
             android:name=".GetHighscoreActivity"
-            android:label="@string/title_activity_get_highscore"
-            android:theme="@style/AppTheme" />
+            android:label="Eingabe Highscore"
+            android:theme="@style/AppTheme"
+            android:title="Eingabe Highscore"/>
         <activity
             android:name=".ShowHighScoreActivity"
-            android:label="@string/title_activity_show_high_score"
-            android:theme="@style/AppTheme" />
+            android:label="Highscore Zehn"
+            android:theme="@style/AppTheme"
+            android:title="Highscore Zehn"/>
         <activity
             android:name=".ZehnActivity"
-            android:label="ZehnActivity"
-            android:theme="@style/AppTheme" />
+            android:label="Spiel Zehn"
+            android:theme="@style/AppTheme"
+            android:title="Spiel Zehn"/>
         <activity
             android:name=".HundertActivity"
-            android:label="HundertActivity"
-            android:theme="@style/AppTheme" />
+            android:label="Spiel Hundert"
+            android:theme="@style/AppTheme"
+            android:title="Spiel Hundert"/>
         <activity
             android:name=".HundertShowHighscoreActivity"
-            android:label="@string/title_activity_hundert_show_highscore" />
+            android:label="Highscore Hundert"
+            android:theme="@style/AppTheme"
+            android:title="Highscore Hundert"/>
         <activity
             android:name=".HundertGetHighscoreActivity"
-            android:label="@string/title_activity_hundert_get_highscore"></activity>
+            android:label="Eingabe Highscore"
+            android:theme="@style/AppTheme"
+            android:title="Eingabe Highscore">
+        </activity>
     </application>
 
 </manifest>

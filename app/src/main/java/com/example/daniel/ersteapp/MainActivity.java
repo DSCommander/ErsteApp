@@ -69,18 +69,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item){
 
         switch (item.getItemId()){
-            case R.id.menu_id:
-                Toast.makeText(getApplicationContext(),"Menü ist ausgewählt", Toast.LENGTH_SHORT).show();
-                Intent menu = new Intent(MainActivity.this, MainActivity.class);
-                startActivity(menu);
-                return true;
-
-            case R.id.setting_id:
-                Toast.makeText(getApplicationContext(),"Setting ist ausgewählt", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.info_id:
-                Toast.makeText(getApplicationContext(),"Info ist ausgewählt", Toast.LENGTH_SHORT).show();
-                return true;
 
             case R.id.zehn_id:
                 Toast.makeText(getApplicationContext(),"Spiel Zehn ist ausgewählt", Toast.LENGTH_SHORT).show();
@@ -88,7 +76,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(zehn);
                 return true;
 
-            case R.id.hunder_id:
+            case R.id.hundert_id:
                 Toast.makeText(getApplicationContext(),"Spiel Hundert ist ausgewählt", Toast.LENGTH_SHORT).show();
                 Intent hundert = new Intent(MainActivity.this, HundertActivity.class);
                 startActivity(hundert);

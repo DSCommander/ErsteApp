@@ -16,6 +16,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.support.v7.app.ActionBar;
 
 import java.util.Random;
 
@@ -23,6 +24,7 @@ import java.util.Random;
  * Created by Daniel on 30.06.2016.
  */
 public class HundertActivity extends AppCompatActivity {
+    //TODO Popup/Dialog erstellen zur Eingabe von Name oder Highscoreliste einzeigen lassen
 
     private int num100;
     private int num101;
@@ -54,11 +56,64 @@ public class HundertActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hundert);
-        // TODO hinzufügen der ActionBar mit neuem eigenem Menü und eigenem Symbol und Symbol in der OnCreateOptionMenu
+        android.support.v7.app.ActionBar ab = getSupportActionBar();
+        ab.setLogo(R.drawable.videogamet_black_24dp);
+        ab.setDisplayUseLogoEnabled(true);
+        ab.setDisplayShowHomeEnabled(true);
+
         points = 0;
         pickNumbersHundert();
     }
 
+
+    // Anfang der Action Bar oben recht
+    @Override
+    public boolean onCreateOptionsMenu (Menu menu){
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.menu.main_spiel_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item){
+
+        switch (item.getItemId()){
+            case R.id.menu_id:
+                Toast.makeText(getApplicationContext(),"Menü ist ausgewählt", Toast.LENGTH_SHORT).show();
+                Intent menu = new Intent(HundertActivity.this, MainActivity.class);
+                startActivity(menu);
+                return true;
+
+            case R.id.zehn_id:
+                Toast.makeText(getApplicationContext(),"Spiel Zehn ist ausgewählt", Toast.LENGTH_SHORT).show();
+                Intent zehn = new Intent(HundertActivity.this, ZehnActivity.class);
+                startActivity(zehn);
+                return true;
+
+            case R.id.hundert_id:
+                Toast.makeText(getApplicationContext(),"Spiel Hundert ist ausgewählt", Toast.LENGTH_SHORT).show();
+                Intent hundert = new Intent(HundertActivity.this, HundertActivity.class);
+                startActivity(hundert);
+                return true;
+
+            case R.id.zehn_highscore_id:
+                Toast.makeText(getApplicationContext(),"Zehner Highscore ist ausgewählt", Toast.LENGTH_SHORT).show();
+                Intent highscore = new Intent(HundertActivity.this, ShowHighScoreActivity.class);
+                startActivity(highscore);
+                return true;
+
+            case R.id.hundert_highscore_id:
+                Toast.makeText(getApplicationContext(),"Hunderter Highscore ist ausgewählt", Toast.LENGTH_SHORT).show();
+                Intent hundert_highscore = new Intent(HundertActivity.this, HundertShowHighscoreActivity.class);
+                startActivity(hundert_highscore);
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+
+    }
+    // Ende der Action Bar oben rechts
 
     private void uebergabe(){
 

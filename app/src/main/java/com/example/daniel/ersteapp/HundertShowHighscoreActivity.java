@@ -30,7 +30,7 @@ public class HundertShowHighscoreActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_show_high_score);
+        setContentView(R.layout.activity_hundert_show_highscore);
         android.support.v7.app.ActionBar ab = getSupportActionBar();
         ab.setLogo(R.drawable.ic_star_black_24dp);
         ab.setDisplayUseLogoEnabled(true);
@@ -44,7 +44,7 @@ public class HundertShowHighscoreActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu (Menu menu){
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.main_activity_menu, menu);
+        menuInflater.inflate(R.menu.main_showhighscore_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -58,20 +58,13 @@ public class HundertShowHighscoreActivity extends AppCompatActivity {
                 startActivity(menu);
                 return true;
 
-            case R.id.setting_id:
-                Toast.makeText(getApplicationContext(),"Setting ist ausgewählt", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.info_id:
-                Toast.makeText(getApplicationContext(),"Info ist ausgewählt", Toast.LENGTH_SHORT).show();
-                return true;
-
             case R.id.zehn_id:
                 Toast.makeText(getApplicationContext(),"Spiel Zehn ist ausgewählt", Toast.LENGTH_SHORT).show();
                 Intent zehn = new Intent(HundertShowHighscoreActivity.this, ZehnActivity.class);
                 startActivity(zehn);
                 return true;
 
-            case R.id.hunder_id:
+            case R.id.hundert_id:
                 Toast.makeText(getApplicationContext(),"Spiel Hundert ist ausgewählt", Toast.LENGTH_SHORT).show();
                 Intent hundert = new Intent(HundertShowHighscoreActivity.this, HundertActivity.class);
                 startActivity(hundert);

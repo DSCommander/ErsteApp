@@ -46,7 +46,7 @@ public class ShowHighScoreActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu (Menu menu){
         MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.main_activity_menu, menu);
+        menuInflater.inflate(R.menu.main_showhighscore_menu, menu);
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -58,13 +58,6 @@ public class ShowHighScoreActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(),"Menü ist ausgewählt", Toast.LENGTH_SHORT).show();
                 Intent menu = new Intent(ShowHighScoreActivity.this, MainActivity.class);
                 startActivity(menu);
-                return true;
-
-            case R.id.setting_id:
-                Toast.makeText(getApplicationContext(),"Setting ist ausgewählt", Toast.LENGTH_SHORT).show();
-                return true;
-            case R.id.info_id:
-                Toast.makeText(getApplicationContext(),"Info ist ausgewählt", Toast.LENGTH_SHORT).show();
                 return true;
 
             case R.id.zehn_id:
